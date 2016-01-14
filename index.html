@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>StarPerGame</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta name="description" content="Games development team with a clear vision of players needs">
+</head>
+
+<style type="text/css">
+
+html{height: 100%;}
+
+body
+{
+	height:97%;
+	width:99%;
+	background-image:url("images/spg_play_room.jpg");/*your background image*/  
+	background-repeat:no-repeat;/*we want to have one single image not a repeated one*/  
+	background-size:cover;/*this sets the image to fullscreen covering the whole screen*/  
+	/*css hack for ie*/     
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+	background-position:top center;
+}
+
+#slogan_text, #mail_link {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+
+#slogan_text {color:#ececef; font-size:40px;font-weight:normal; padding: 30px 0 10px 30px; margin:0;}
+#mail_link {color:#ececef; font-size:26px;font-weight:normal; padding: 30px 0 10px 30px; margin:0;}
+
+#tvlink
+{
+	display: block;
+	overflow: hidden;
+	position: absolute;   
+	background: transparent;
+	text-indent: -9999px; 
+
+	left: 315px;
+	top: 25px;
+	width: 480px;
+	height: 280px;
+}
+
+#hideAll
+{
+	position: fixed;
+	left: 0px; 
+	right: 0px; 
+	top: 0px; 
+	bottom: 0px; 
+	background-color: white;
+	z-index: 99; /* Higher than anything else in the document */
+}
+ 
+a { text-decoration : none; color : #000000; }
+ 
+</style>
+
+<body>
+
+<div style="display: none" id="hideAll">&nbsp;</div>
+
+<table style="height: 99%; width: 100%">
+	<tr style="height: 33%;">
+		<td width="50%"><div id="slogan_text">We<br>make<br>games</div></td>
+		<td width="50%" align="right" style='padding:0px 15px 0px 0px'>
+			<a href="https://www.youtube.com/channel/UCn_VHYsz9IDJnbco5QdyFAg/feed" target="_blank"><img src="images/YouTube-logo-light.png" width="100" hspace="0" vspace="0"/></a>
+		</td>
+	</tr>
+	<tr style="height: 33%;">
+			<a id="tvlink" title="GeneMix game" href="https://itunes.apple.com/ru/app/genemix/id1001962433?mt=8" target="_blank">GeneMix game</a>
+	</tr>
+	<tr style="height: 33% width: 100%; vertical-align: bottom">
+		<td width="50%"><div id="company_name"></div></td>
+		<td width="50%" align="right" style='padding:0px 30px 0px 0px'><div id="slogan_text">cause<br>we love<br>games</div></td>
+	</tr>
+</table>
+
+</body>
+  
+<script type="text/javascript">
+
+document.getElementById("hideAll").style.display = "block";
+
+var cursor=false
+
+function companyName()
+{
+	var name = "> star per game"
+	var username = "info"
+	var hostname = "starpergame.com"
+	if (cursor)
+	{
+		name += "_";
+	}
+	company_name.innerHTML="<a href='" + "mail" + "to:" + username + "@" + hostname + "'><div id='mail_link'>"+name+"</div></a>";
+	cursor = !cursor;
+	setTimeout("companyName()", 500)
+}
+
+window.onload = function()
+{
+	companyName();
+	document.getElementById("hideAll").style.display = "none"; 
+	updateTVLink();
+}
+
+window.onresize = function()
+{
+	updateTVLink();
+}
+
+var pointer = document.getElementById("pointer")
+var tvlink = document.getElementById("tvlink")
+var image = { width: 1040, height: 605 };
+var tv = { x: 310, y: 25, width: 470, height: 285}
+
+function updateTVLink() {
+    var windowWidth = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+    var windowHeight = window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
+
+    // Get largest dimension increase
+    var xScale = windowWidth / image.width;
+    var yScale = windowHeight / image.height;
+    var scale;
+    var yOffset = 0;
+    var xOffset = 0;
+
+    if (xScale > yScale) {
+        // The image fits perfectly in x axis, stretched in y
+        scale = xScale;
+        //yOffset = (windowHeight - (image.height * scale)) / 2;
+    } else {
+        // The image fits perfectly in y axis, stretched in x
+        scale = yScale;
+        xOffset = (windowWidth - (image.width * scale)) / 2;
+    }
+	
+	tvlink.style.top = (tv.y*scale + yOffset) + "px";
+	tvlink.style.left = (tv.x*scale + xOffset) + "px";
+	tvlink.style.width = tv.width*scale + "px";
+	tvlink.style.height = tv.height*scale + "px";
+}
+
+</script>
+
+</html>
