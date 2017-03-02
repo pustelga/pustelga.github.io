@@ -1,0 +1,31 @@
+Privacy policy:
+
+  This Privacy Policy defines how StarPerGame team collect and use users personal and non-personal
+information and data in our mobile applications (available for smart phones and tablets) and 
+on our website.
+
+Personal Data:
+
+  StarPerGame respects your privacy rights and recognizes the importance of protecting any 
+information collected about you. 
+
+  StarPerGame do not collect any personal user data. StarPerGame may use tools or third-party 
+analytics software to collect and use certain non-personal data that does not enable us to 
+identify you (we track only data such as: device type, mobile device software, data carrier, ...). 
+
+  StarPerGame uses Flurry Analytics to analyze anonymous aggregated usage data for our applications.
+
+Non-Personal Data:
+
+  Advertisers who serve ads may use technology which can uniquely identify mobile devices to deliver 
+better target messages and control number of times you get an Add. Add Networks may access your unique 
+device identifier through their own technologies and use it to target advertising to you. 
+
+  Advertisers make available links through advertisements or otherwise enabling you to access third 
+party sites, tools or games. Please note that, while using such sites, tools or games, you are not 
+affiliated with or controlled by us. 
+
+  StarPerGame applications use Google AdMob ads as primary ad service with included collaboration (ad 
+mediation) with AppBrain and InMobi ad networks.
+
+  StarPerGame applications use Unity Ads, AdColony, Chartboost and Vungle ads networks.
